@@ -1,0 +1,124 @@
+In file included from /opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:19:
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:1799:23: error: invalid use of incomplete typedef ‘ASN1_INTEGER’ {aka ‘struct asn1_string_st’}
+ 1799 |         OPENSSL_free(s->data);
+      |                       ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:1803:18: error: invalid use of incomplete typedef ‘ASN1_INTEGER’ {aka ‘struct asn1_string_st’}
+ 1803 |                 s->data = OPENSSL_malloc(sizeof(char));
+      |                  ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:1804:23: error: invalid use of incomplete typedef ‘ASN1_INTEGER’ {aka ‘struct asn1_string_st’}
+ 1804 |                 Copy(s->data, &zero, sizeof(char));
+      |                       ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:1805:18: error: invalid use of incomplete typedef ‘ASN1_INTEGER’ {aka ‘struct asn1_string_st’}
+ 1805 |                 s->length = sizeof(char);
+      |                  ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:1809:18: error: invalid use of incomplete typedef ‘ASN1_INTEGER’ {aka ‘struct asn1_string_st’}
+ 1809 |                 s->data = OPENSSL_malloc(serial->size);
+      |                  ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:1810:23: error: invalid use of incomplete typedef ‘ASN1_INTEGER’ {aka ‘struct asn1_string_st’}
+ 1810 |                 Copy(s->data, serial->data, serial->size);
+      |                       ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:1811:18: error: invalid use of incomplete typedef ‘ASN1_INTEGER’ {aka ‘struct asn1_string_st’}
+ 1811 |                 s->length = serial->size;
+      |                  ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c: In function ‘NewRootX509’:
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:1942:23: error: invalid use of incomplete typedef ‘ASN1_INTEGER’ {aka ‘struct asn1_string_st’}
+ 1942 |         OPENSSL_free(s->data);
+      |                       ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:1946:18: error: invalid use of incomplete typedef ‘ASN1_INTEGER’ {aka ‘struct asn1_string_st’}
+ 1946 |                 s->data = OPENSSL_malloc(sizeof(char));
+      |                  ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:1947:23: error: invalid use of incomplete typedef ‘ASN1_INTEGER’ {aka ‘struct asn1_string_st’}
+ 1947 |                 Copy(s->data, &zero, sizeof(char));
+      |                       ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:1948:18: error: invalid use of incomplete typedef ‘ASN1_INTEGER’ {aka ‘struct asn1_string_st’}
+ 1948 |                 s->length = sizeof(char);
+      |                  ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:1952:18: error: invalid use of incomplete typedef ‘ASN1_INTEGER’ {aka ‘struct asn1_string_st’}
+ 1952 |                 s->data = OPENSSL_malloc(serial->size);
+      |                  ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:1953:23: error: invalid use of incomplete typedef ‘ASN1_INTEGER’ {aka ‘struct asn1_string_st’}
+ 1953 |                 Copy(s->data, serial->data, serial->size);
+      |                       ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:1954:18: error: invalid use of incomplete typedef ‘ASN1_INTEGER’ {aka ‘struct asn1_string_st’}
+ 1954 |                 s->length = serial->size;
+      |                  ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c: In function ‘SystemToAsn1Time’:
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:2183:14: error: invalid use of incomplete typedef ‘ASN1_TIME’ {aka ‘struct asn1_string_st’}
+ 2183 |         if (t->data == NULL || t->length < sizeof(tmp))
+      |              ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:2183:33: error: invalid use of incomplete typedef ‘ASN1_TIME’ {aka ‘struct asn1_string_st’}
+ 2183 |         if (t->data == NULL || t->length < sizeof(tmp))
+      |                                 ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:2185:18: error: invalid use of incomplete typedef ‘ASN1_TIME’ {aka ‘struct asn1_string_st’}
+ 2185 |                 t->data = OPENSSL_malloc(sizeof(tmp));
+      |                  ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:2187:25: error: invalid use of incomplete typedef ‘ASN1_TIME’ {aka ‘struct asn1_string_st’}
+ 2187 |         StrCpy((char *)t->data, t->length, tmp);
+      |                         ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:2187:34: error: invalid use of incomplete typedef ‘ASN1_TIME’ {aka ‘struct asn1_string_st’}
+ 2187 |         StrCpy((char *)t->data, t->length, tmp);
+      |                                  ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:2188:10: error: invalid use of incomplete typedef ‘ASN1_TIME’ {aka ‘struct asn1_string_st’}
+ 2188 |         t->length = StrLen(tmp);
+      |          ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:2189:10: error: invalid use of incomplete typedef ‘ASN1_TIME’ {aka ‘struct asn1_string_st’}
+ 2189 |         t->type = V_ASN1_UTCTIME;
+      |          ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c: In function ‘Asn1TimeToSystem’:
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:2238:37: error: invalid use of incomplete typedef ‘ASN1_TIME’ {aka ‘struct asn1_string_st’}
+ 2238 |         if (StrToSystem(s, (char *)t->data) == false)
+      |                                     ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:2243:14: error: invalid use of incomplete typedef ‘ASN1_TIME’ {aka ‘struct asn1_string_st’}
+ 2243 |         if (t->type == V_ASN1_GENERALIZEDTIME)
+      |              ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c: In function ‘RsaVerifyEx’:
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:2336:13: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 2336 |         rsa = EVP_PKEY_get0_RSA(k->pkey);
+      |             ^
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c: In function ‘RsaSignEx’:
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:2398:58: warning: passing argument 4 of ‘RSA_private_encrypt’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 2398 |         if (RSA_private_encrypt(sizeof(hash), hash, dst, EVP_PKEY_get0_RSA(k->pkey), RSA_PKCS1_PADDING) <= 0)
+      |                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /opt/openssl-bin/include/openssl/x509.h:38,
+                 from /opt/openssl-bin/include/openssl/ssl.h:34,
+                 from /opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:20:
+/opt/openssl-bin/include/openssl/rsa.h:295:10: note: expected ‘RSA *’ {aka ‘struct rsa_st *’} but argument is of type ‘const struct rsa_st *’
+  295 |     RSA *rsa, int padding);
+      |     ~~~~~^~~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c: In function ‘LoadXNames’:
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:2769:41: warning: passing argument 1 of ‘X509NameToName’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 2769 |         x->issuer_name = X509NameToName(X509_get_issuer_name(x509));
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:8:
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.h:322:28: note: expected ‘void *’ but argument is of type ‘const X509_NAME *’ {aka ‘const struct X509_name_st *’}
+  322 | NAME *X509NameToName(void *xn);
+      |                      ~~~~~~^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:2770:42: warning: passing argument 1 of ‘X509NameToName’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 2770 |         x->subject_name = X509NameToName(X509_get_subject_name(x509));
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.h:322:28: note: expected ‘void *’ but argument is of type ‘const X509_NAME *’ {aka ‘const struct X509_name_st *’}
+  322 | NAME *X509NameToName(void *xn);
+      |                      ~~~~~~^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c: In function ‘GetUniStrFromX509Name’:
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:2829:14: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 2829 |         data = X509_NAME_ENTRY_get_data(X509_NAME_get_entry(xn, index));
+      |              ^
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:2834:17: error: invalid use of incomplete typedef ‘ASN1_STRING’ {aka ‘struct asn1_string_st’}
+ 2834 |         if (data->type == V_ASN1_BMPSTRING)
+      |                 ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:2838:17: error: invalid use of incomplete typedef ‘ASN1_STRING’ {aka ‘struct asn1_string_st’}
+ 2838 |         if (data->type == V_ASN1_UTF8STRING || data->type == V_ASN1_T61STRING)
+      |                 ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:2838:52: error: invalid use of incomplete typedef ‘ASN1_STRING’ {aka ‘struct asn1_string_st’}
+ 2838 |         if (data->type == V_ASN1_UTF8STRING || data->type == V_ASN1_T61STRING)
+      |                                                    ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c: In function ‘X509ToX’:
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:3745:33: error: invalid use of incomplete typedef ‘ASN1_INTEGER’ {aka ‘struct asn1_string_st’}
+ 3745 |         x->serial = NewXSerial(s->data, s->length);
+      |                                 ^~
+/opt/SoftEtherVPN/src/Mayaqua/Encrypt.c:3745:42: error: invalid use of incomplete typedef ‘ASN1_INTEGER’ {aka ‘struct asn1_string_st’}
+ 3745 |         x->serial = NewXSerial(s->data, s->length);
+      |                                          ^~
+make[2]: *** [src/Mayaqua/CMakeFiles/mayaqua.dir/build.make:132: src/Mayaqua/CMakeFiles/mayaqua.dir/Encrypt.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:556: src/Mayaqua/CMakeFiles/mayaqua.dir/all] Error 2
+make: *** [Makefile:156: all] Error 2
