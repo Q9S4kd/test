@@ -24,12 +24,21 @@ $type = isset($_GET['type']) ? $_GET['type'] : '';
  * ИСПРАВЛЕНО: Функция расчета SLA теперь учитывает, что в архиве время лежит в UTC+3
  */
 function getUptimeSLA($db, $interval) {
-    // Сдвигаем точку отсчета фильтра на +3 часа, чтобы синхронизировать с archive_time демона
-    $query = "SELECT AVG(loss_percent) as avg_loss FROM ping_archive WHERE archive_time >= datetime('now', '+3 hours', '$interval')";
+    // Используем правильное вычисление времени для SQLite:
+    // Сначала берем текущее время, применяем интервал (-1 day), и только потом сдвигаем на +3 часа,
+    // чтобы получить точную московскую засечку, совпадающую с archive_time демона.
+    $query = "SELECT AVG(loss_percent) as avg_loss FROM ping_archive 
+              WHERE archive_time >= datetime('now', '$interval', '+3 hours')";
+              
     $avg_loss = $db->querySingle($query);
+
+    // Если записей в архиве за этот период нет (например, только запустили систему)
     if ($avg_loss === null) return '100.00%';
+
+    // Вычисляем чистый аптайм
     return number_format(100 - $avg_loss, 2) . '%';
 }
+
 
 switch ($type) {
     case 'latest':
