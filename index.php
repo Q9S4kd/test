@@ -28,12 +28,30 @@
         .widget-title { font-size: 13px; color: #7f8c8d; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
         .widget-value { font-size: 26px; font-weight: bold; margin-top: 5px; }
         
-        .matrix { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 25px; background: #fafafa; padding: 15px; border-radius: 8px; border: 1px solid #eaeaea; min-height: 48px; }
-        .matrix-dot { width: 16px; height: 16px; border-radius: 3px; cursor: pointer; transition: transform 0.1s; }
-        .matrix-dot:hover { transform: scale(1.3); z-index: 10; }
-        .dot-online { background: #2ecc71; }
-        .dot-warning { background: #f1c40f; }
-        .dot-offline { background: #e74c3c; }
+.matrix { 
+    display: grid; 
+    grid-template-columns: repeat(48, 1fr); /* Ровно 48 колонок (12 часов) */
+    gap: 3px;                               /* Небольшой аккуратный зазор */
+    margin-bottom: 25px; 
+    background: #fafafa; 
+    padding: 15px; 
+    border-radius: 8px; 
+    border: 1px solid #eaeaea; 
+}
+
+.matrix-dot { 
+    width: 100%; 
+    height: 14px;                           /* Небольшая высота, чтобы ряды выглядели аккуратной лентой */
+    border-radius: 2px;                     /* Легкое скругление углов */
+    cursor: pointer; 
+    transition: transform 0.1s; 
+}
+
+/* Спокойные, благородные цвета вместо кислотных */
+.dot-online { background: #10b981; }
+.dot-warning { background: #f59e0b; }
+.dot-offline { background: #ef4444; }
+
 
         .btn-refresh-cache { background: #f1f2f6; color: #57606f; border: 1px solid #ced6e0; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px; }
         .btn-refresh-cache:hover { background: #dfe4ea; color: #2f3542; }
@@ -222,9 +240,13 @@ async function loadDashboardData() {
     // =========================================================================
     let matrixStatus = { loaded: false };
     animateProgress('pb-matrix', 'pct-matrix', 98, 30, matrixStatus);
-    fetch('api.php?type=matrix')
-        .then(res => res.json())
-        .then(data => {
+fetch('api.php?type=matrix')
+.then(res => res.json())
+.then(data => {
+    // Берем только последние 96 записей (4 ряда по 24 блока)
+    if (data.length > 96) {
+        data = data.slice(-96);
+    }
             matrixStatus.loaded = true;
             setTimeout(() => {
                 document.getElementById('matrix-loading').style.display = 'none';
@@ -299,7 +321,7 @@ async function loadDashboardData() {
                         container.appendChild(dot);
                     });
                 }
-                container.style.display = 'flex';
+                container.style.display = 'grid';
             }, 300);
         });
     // =========================================================================
